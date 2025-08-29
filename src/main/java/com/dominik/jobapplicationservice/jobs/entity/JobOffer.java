@@ -1,4 +1,4 @@
-package com.dominik.jobapplicationservice.entity;
+package com.dominik.jobapplicationservice.jobs.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
