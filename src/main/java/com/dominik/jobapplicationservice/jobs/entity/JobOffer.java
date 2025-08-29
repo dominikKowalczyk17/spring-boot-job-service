@@ -21,6 +21,9 @@ public class JobOffer {
     @Column(nullable = false)
     String salaryRange;
 
+    @Column(nullable = true)
+    String description;
+
     @Column(nullable = false)
     String company;
 
