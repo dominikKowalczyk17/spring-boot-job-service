@@ -8,6 +8,7 @@ import com.dominik.jobapplicationservice.cv.service.CVTailoringService;
 import com.dominik.jobapplicationservice.cv.service.CVTextPatternService;
 import com.dominik.jobapplicationservice.jobs.entity.JobOffer;
 import com.dominik.jobapplicationservice.jobs.service.JobService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/cv")
 public class CVController {
@@ -97,6 +99,7 @@ public class CVController {
             return ResponseEntity.ok(tailoredContent);
             
         } catch (Exception e) {
+            log.error("Error tailoring CV for cvId={} and jobId={}: {}", cvId, jobId, e.getMessage(), e);
             return ResponseEntity.status(500).body(null);
         }
     }

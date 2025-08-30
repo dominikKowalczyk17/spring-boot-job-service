@@ -21,7 +21,7 @@ public class JobOffer {
     @Column(nullable = false)
     String salaryRange;
 
-    @Column(nullable = true)
+    @Column(nullable = false, columnDefinition = "TEXT")
     String description;
 
     @Column(nullable = false)
